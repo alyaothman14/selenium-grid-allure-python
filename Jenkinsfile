@@ -1,13 +1,6 @@
 pipeline{
     agent none
     stages{
-        stage('Build Python'){
-            agent{
-                docker{
-                    image 'python:3'
-                }
-            }
-        }
         stage("Build Selnium Test Image"){
             steps{
                 script{
