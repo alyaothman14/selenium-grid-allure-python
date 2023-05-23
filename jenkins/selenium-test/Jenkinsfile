@@ -13,7 +13,7 @@ pipeline{
         }
         stage("Run test"){
             steps{
-                sh"ALLURE_IP_ADDRESS=192.168.1.103 docker-compose -f docker-compose.yml up"
+                sh"ALLURE_IP_ADDRESS=192.168.1.103 docker-compose -d -f docker-compose.yml up"
             }
         }
     }
