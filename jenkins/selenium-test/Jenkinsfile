@@ -13,7 +13,12 @@ pipeline{
         }
         stage("Run Grid"){
             steps{
-                sh"ALLURE_IP_ADDRESS=192.168.1.103 docker-compose -f docker-compose.yml up -d  selenium-hub  selenium-chrome  selenium-firefox"
+                sh"ALLURE_IP_ADDRESS=192.168.1.103 docker-compose -f docker-compose-arm.yml up -d  selenium-hub  selenium-chrome  selenium-firefox"
+            }
+        }
+        stage("Run Test"){
+            steps{
+                sh"ALLURE_IP_ADDRESS=192.168.1.103 docker-compose -f docker-compose-arm.yml up  selenium-test"
             }
         }
     }
