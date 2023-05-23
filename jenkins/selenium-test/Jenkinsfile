@@ -8,12 +8,12 @@ pipeline{
         }
         stage("Start Allure Server"){
             steps{
-                sh "docker-compose -f docker-compose-allure.yml"
+                sh "docker-compose -f docker-compose-allure.yml up"
             }
         }
         stage("Run test"){
             steps{
-                sh"docker-compose -f docker-compose.yml"
+                sh"ALLURE_IP_ADDRESS=192.168.1.103 docker-compose -d -f docker-compose.yml up"
             }
         }
     }
