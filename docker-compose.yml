@@ -13,7 +13,7 @@ services:
     ports:
       - "4442-4444:4442-4444"  
   selenium-chrome:
-    image: selenium/node-chromium
+    image: selenium/node-chrome:4.9.1
     depends_on: 
       - selenium-hub
     environment:
