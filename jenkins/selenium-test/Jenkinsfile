@@ -1,0 +1,25 @@
+pipeline{
+    agent any
+    stages{
+        stage("Pull Selenium test docker Image"){
+            steps{
+                sh "docker pull aothmana/selenium-grid-python "
+            }
+        }
+        stage("Start Allure Server"){
+            steps{
+                sh "docker-compose -f docker-compose-allure.yml"
+            }
+        }
+        stage("Run test"){
+            steps{
+                sh"docker-compose -f docker-compose.yml"
+            }
+        }
+    }
+    post{
+        always{
+            sh"docker-compose down"
+        }
+    }
+}
