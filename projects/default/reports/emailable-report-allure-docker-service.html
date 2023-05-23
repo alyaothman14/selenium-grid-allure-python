@@ -1,0 +1,2504 @@
+<html>
+
+<head>
+    <title>Emailable Report - Allure Docker Service</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/cosmo/bootstrap.css">
+    <link rel="shortcut icon" href="/static/favicon">
+</head>
+
+<body>
+    <div class="container jumbotron">
+        <div class="display-4 lead">Emailable Report</div>
+        <div class="lead">Allure Docker Service</div>
+        <br>
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Project ID
+                <span class="badge badge-light badge-pill">
+                    default
+                </span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Server Link
+                <span class="badge badge-light badge-pill">
+                    <a href="http://localhost:5050/allure-docker-service/latest-report?project_id=default" target="_blank">http://localhost:5050/allure-docker-service/latest-report?project_id=default</a>
+                </span>
+            </li>
+        </ul>
+
+        
+        
+            
+                
+            
+        
+            
+                
+            
+        
+            
+                
+            
+        
+            
+                
+            
+        
+            
+                
+            
+        
+            
+                
+            
+        
+            
+                
+            
+        
+            
+                
+            
+        
+            
+                
+            
+        
+            
+                
+            
+        
+            
+                
+            
+        
+
+        
+        
+            
+            
+            
+            
+            
+        
+        <br>
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col" class="table-active text-center">Total</th>
+                        <th scope="col" class="table-success text-center">Passed</th>
+                        <th scope="col" class="table-danger text-center">Failed</th>
+                        <th scope="col" class="table-warning text-center">Broken</th>
+                        <th scope="col" class="table-light text-center">Skipped</th>
+                        <th scope="col" class="table-dark text-center">Unknown</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="col" class="text-center">11</th>
+                        <th scope="col" class="text-center">8 (72.73%)</th>
+                        <th scope="col" class="text-center">0 (0.00%)</th>
+                        <th scope="col" class="text-center">3 (27.27%)</th>
+                        <th scope="col" class="text-center">0 (0.00%)</th>
+                        <th scope="col" class="text-center">0 (0.00%)</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr class="my-4">
+
+        
+        
+            
+                
+                
+            
+
+        <div
+            class="card border-secondary mb-3 border-warning">
+            <div class="card-header">
+                User is able to login,this should fail
+                <span
+                    class="badge badge-pill badge-warning">broken</span>
+            </div>
+
+            <div class="card-body">
+                <!-- CARD TEXT -->
+                <p class="card-text">
+                    <b>description:</b> User is able to login
+                    <br>
+
+                    
+                    <b>duration:</b> 34.393 s
+                    <br>
+                    
+
+                    
+                    <b>severity:</b> normal
+                    <br>
+                    
+
+                    
+
+                    
+                    <b>tag:</b> firefox
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <b>tag:</b> @pytest.mark.usefixtures(&#39;setup&#39;)
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <b>suite:</b> test_login
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <b>package:</b> tests.test_login
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <b>Status Message: </b>
+                    selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:182:5
+NoSuchElementError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:394:5
+element.find/&lt;/&lt;@chrome://remote/content/marionette/element.sys.mjs:134:16
+                    
+                    <br>
+                    
+                    <b>Status Trace: </b>
+                    self = &lt;tests.test_login.TestLogin object at 0xffff8e423c10&gt;
+
+&gt;   ???
+
+/Users/alya/Documents/selenium-ci-cd/tests/test_login.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+pages/login_page.py:56: in login_existing_user
+    assert self.get_user_name() == &#34;Hi, &#34;+username
+pages/nav_bar_page.py:25: in get_user_name
+    return self.get_text(self.LOGGED_IN_USER)
+pages/base_page.py:33: in get_text
+    element: WebElement = self.wait.until(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;selenium.webdriver.support.wait.WebDriverWait (session=&#34;dbf71496-a870-4a4b-aac9-871078a6f3d8&#34;)&gt;
+method = &lt;function visibility_of_element_located.&lt;locals&gt;._predicate at 0xffff8e2d1ee0&gt;
+message = &#39;&#39;
+
+    def until(self, method, message: str = &#34;&#34;):
+        &#34;&#34;&#34;Calls the method provided with the driver as an argument until the \
+        return value does not evaluate to ``False``.
+    
+        :param method: callable(WebDriver)
+        :param message: optional message for :exc:`TimeoutException`
+        :returns: the result of the last call to `method`
+        :raises: :exc:`selenium.common.exceptions.TimeoutException` if timeout occurs
+        &#34;&#34;&#34;
+        screen = None
+        stacktrace = None
+    
+        end_time = time.monotonic() + self._timeout
+        while True:
+            try:
+                value = method(self._driver)
+                if value:
+                    return value
+            except self._ignored_exceptions as exc:
+                screen = getattr(exc, &#34;screen&#34;, None)
+                stacktrace = getattr(exc, &#34;stacktrace&#34;, None)
+            time.sleep(self._poll)
+            if time.monotonic() &gt; end_time:
+                break
+&gt;       raise TimeoutException(message, screen, stacktrace)
+E       selenium.common.exceptions.TimeoutException: Message: 
+E       Stacktrace:
+E       RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+E       WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:182:5
+E       NoSuchElementError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:394:5
+E       element.find/&lt;/&lt;@chrome://remote/content/marionette/element.sys.mjs:134:16
+
+/root/.local/share/virtualenvs/selenium-test-Ou9L0FGN/lib/python3.11/site-packages/selenium/webdriver/support/wait.py:95: TimeoutException
+                    
+                </p>
+
+                <!-- TABLE -->
+                
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Steps</th>
+                                <th scope="col">Duration</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- TABLE - BEFORE STAGES -->
+                            
+                            
+                            
+                            
+                            
+                            
+
+
+                            <!-- TABLE - TEST STAGES -->
+                            
+
+                            
+                            
+                                
+                                    
+                                
+                            <tr
+                                class="table-warning">
+                                <td>User logs in</td>
+                                
+                                <td>34.391 s</td>
+                                
+                            </tr>
+
+                            
+                            <tr class="table-danger">
+                                <td style="padding-left:3em">
+                                    <h6>selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:182:5
+NoSuchElementError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:394:5
+element.find/&lt;/&lt;@chrome://remote/content/marionette/element.sys.mjs:134:16
+
+</h6>
+                                </td>
+                                <td></td>
+                            </tr>
+                            
+
+                            
+                            <tr class="table-danger">
+                                <td style="padding-left:3em">
+                                    <h6>  File &#34;/root/.local/share/virtualenvs/selenium-test-Ou9L0FGN/lib/python3.11/site-packages/allure_commons/_allure.py&#34;, line 192, in impl
+    return func(*a, **kw)
+           ^^^^^^^^^^^^^^
+  File &#34;/home/selenium-test/pages/login_page.py&#34;, line 56, in login_existing_user
+    assert self.get_user_name() == &#34;Hi, &#34;+username
+           ^^^^^^^^^^^^^^^^^^^^
+  File &#34;/root/.local/share/virtualenvs/selenium-test-Ou9L0FGN/lib/python3.11/site-packages/allure_commons/_allure.py&#34;, line 192, in impl
+    return func(*a, **kw)
+           ^^^^^^^^^^^^^^
+  File &#34;/home/selenium-test/pages/nav_bar_page.py&#34;, line 25, in get_user_name
+    return self.get_text(self.LOGGED_IN_USER)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &#34;/home/selenium-test/pages/base_page.py&#34;, line 33, in get_text
+    element: WebElement = self.wait.until(
+                          ^^^^^^^^^^^^^^^^
+  File &#34;/root/.local/share/virtualenvs/selenium-test-Ou9L0FGN/lib/python3.11/site-packages/selenium/webdriver/support/wait.py&#34;, line 95, in until
+    raise TimeoutException(message, screen, stacktrace)
+</h6>
+                                </td>
+                                <td></td>
+                            </tr>
+                            
+
+                            
+                            
+
+                            <!-- TABLE - AFTER STAGES -->
+                            
+                            
+                            
+                            
+                            
+                            
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+
+        </div>
+        
+            
+                
+                
+            
+
+        <div
+            class="card border-secondary mb-3 border-warning">
+            <div class="card-header">
+                User is able to login,this should fail
+                <span
+                    class="badge badge-pill badge-warning">broken</span>
+            </div>
+
+            <div class="card-body">
+                <!-- CARD TEXT -->
+                <p class="card-text">
+                    <b>description:</b> User is able to login
+                    <br>
+
+                    
+                    <b>duration:</b> 34.638 s
+                    <br>
+                    
+
+                    
+                    <b>severity:</b> normal
+                    <br>
+                    
+
+                    
+
+                    
+                    <b>tag:</b> chrome
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <b>tag:</b> @pytest.mark.usefixtures(&#39;setup&#39;)
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <b>suite:</b> test_login
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <b>package:</b> tests.test_login
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <b>Status Message: </b>
+                    selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+#0 0xaaaaba2f679c &lt;unknown&gt;
+#1 0xaaaaba06b3cc &lt;unknown&gt;
+#2 0xaaaaba09f0e0 &lt;unknown&gt;
+#3 0xaaaaba0d3d2c &lt;unknown&gt;
+#4 0xaaaaba09547c &lt;unknown&gt;
+#5 0xaaaaba096894 &lt;unknown&gt;
+#6 0xaaaaba2c4a7c &lt;unknown&gt;
+#7 0xaaaaba2c700c &lt;unknown&gt;
+#8 0xaaaaba2c6bac &lt;unknown&gt;
+#9 0xaaaaba2cd4d8 &lt;unknown&gt;
+#10 0xaaaaba2c7924 &lt;unknown&gt;
+#11 0xaaaaba2a6e20 &lt;unknown&gt;
+#12 0xaaaaba2e0eec &lt;unknown&gt;
+#13 0xaaaaba2e10b8 &lt;unknown&gt;
+#14 0xaaaaba2ef170 &lt;unknown&gt;
+#15 0xffffbb5dedd8 &lt;unknown&gt;
+#16 0xffffbb647e5c &lt;unknown&gt;
+                    
+                    <br>
+                    
+                    <b>Status Trace: </b>
+                    self = &lt;tests.test_login.TestLogin object at 0xffffb9a5fd90&gt;
+
+&gt;   ???
+
+/Users/alya/Documents/selenium-ci-cd/tests/test_login.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+pages/login_page.py:56: in login_existing_user
+    assert self.get_user_name() == &#34;Hi, &#34;+username
+pages/nav_bar_page.py:25: in get_user_name
+    return self.get_text(self.LOGGED_IN_USER)
+pages/base_page.py:33: in get_text
+    element: WebElement = self.wait.until(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;selenium.webdriver.support.wait.WebDriverWait (session=&#34;c9d8aa144241c20cbacd8a6627647dce&#34;)&gt;
+method = &lt;function visibility_of_element_located.&lt;locals&gt;._predicate at 0xffffb9a860c0&gt;
+message = &#39;&#39;
+
+    def until(self, method, message: str = &#34;&#34;):
+        &#34;&#34;&#34;Calls the method provided with the driver as an argument until the \
+        return value does not evaluate to ``False``.
+    
+        :param method: callable(WebDriver)
+        :param message: optional message for :exc:`TimeoutException`
+        :returns: the result of the last call to `method`
+        :raises: :exc:`selenium.common.exceptions.TimeoutException` if timeout occurs
+        &#34;&#34;&#34;
+        screen = None
+        stacktrace = None
+    
+        end_time = time.monotonic() + self._timeout
+        while True:
+            try:
+                value = method(self._driver)
+                if value:
+                    return value
+            except self._ignored_exceptions as exc:
+                screen = getattr(exc, &#34;screen&#34;, None)
+                stacktrace = getattr(exc, &#34;stacktrace&#34;, None)
+            time.sleep(self._poll)
+            if time.monotonic() &gt; end_time:
+                break
+&gt;       raise TimeoutException(message, screen, stacktrace)
+E       selenium.common.exceptions.TimeoutException: Message: 
+E       Stacktrace:
+E       #0 0xaaaaba2f679c &lt;unknown&gt;
+E       #1 0xaaaaba06b3cc &lt;unknown&gt;
+E       #2 0xaaaaba09f0e0 &lt;unknown&gt;
+E       #3 0xaaaaba0d3d2c &lt;unknown&gt;
+E       #4 0xaaaaba09547c &lt;unknown&gt;
+E       #5 0xaaaaba096894 &lt;unknown&gt;
+E       #6 0xaaaaba2c4a7c &lt;unknown&gt;
+E       #7 0xaaaaba2c700c &lt;unknown&gt;
+E       #8 0xaaaaba2c6bac &lt;unknown&gt;
+E       #9 0xaaaaba2cd4d8 &lt;unknown&gt;
+E       #10 0xaaaaba2c7924 &lt;unknown&gt;
+E       #11 0xaaaaba2a6e20 &lt;unknown&gt;
+E       #12 0xaaaaba2e0eec &lt;unknown&gt;
+E       #13 0xaaaaba2e10b8 &lt;unknown&gt;
+E       #14 0xaaaaba2ef170 &lt;unknown&gt;
+E       #15 0xffffbb5dedd8 &lt;unknown&gt;
+E       #16 0xffffbb647e5c &lt;unknown&gt;
+
+/root/.local/share/virtualenvs/selenium-test-Ou9L0FGN/lib/python3.11/site-packages/selenium/webdriver/support/wait.py:95: TimeoutException
+                    
+                </p>
+
+                <!-- TABLE -->
+                
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Steps</th>
+                                <th scope="col">Duration</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- TABLE - BEFORE STAGES -->
+                            
+                            
+                            
+                            
+                            
+                            
+
+
+                            <!-- TABLE - TEST STAGES -->
+                            
+
+                            
+                            
+                                
+                                    
+                                
+                            <tr
+                                class="table-warning">
+                                <td>User logs in</td>
+                                
+                                <td>34.637 s</td>
+                                
+                            </tr>
+
+                            
+                            <tr class="table-danger">
+                                <td style="padding-left:3em">
+                                    <h6>selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+#0 0xaaaaba2f679c &lt;unknown&gt;
+#1 0xaaaaba06b3cc &lt;unknown&gt;
+#2 0xaaaaba09f0e0 &lt;unknown&gt;
+#3 0xaaaaba0d3d2c &lt;unknown&gt;
+#4 0xaaaaba09547c &lt;unknown&gt;
+#5 0xaaaaba096894 &lt;unknown&gt;
+#6 0xaaaaba2c4a7c &lt;unknown&gt;
+#7 0xaaaaba2c700c &lt;unknown&gt;
+#8 0xaaaaba2c6bac &lt;unknown&gt;
+#9 0xaaaaba2cd4d8 &lt;unknown&gt;
+#10 0xaaaaba2c7924 &lt;unknown&gt;
+#11 0xaaaaba2a6e20 &lt;unknown&gt;
+#12 0xaaaaba2e0eec &lt;unknown&gt;
+#13 0xaaaaba2e10b8 &lt;unknown&gt;
+#14 0xaaaaba2ef170 &lt;unknown&gt;
+#15 0xffffbb5dedd8 &lt;unknown&gt;
+#16 0xffffbb647e5c &lt;unknown&gt;
+
+</h6>
+                                </td>
+                                <td></td>
+                            </tr>
+                            
+
+                            
+                            <tr class="table-danger">
+                                <td style="padding-left:3em">
+                                    <h6>  File &#34;/root/.local/share/virtualenvs/selenium-test-Ou9L0FGN/lib/python3.11/site-packages/allure_commons/_allure.py&#34;, line 192, in impl
+    return func(*a, **kw)
+           ^^^^^^^^^^^^^^
+  File &#34;/home/selenium-test/pages/login_page.py&#34;, line 56, in login_existing_user
+    assert self.get_user_name() == &#34;Hi, &#34;+username
+           ^^^^^^^^^^^^^^^^^^^^
+  File &#34;/root/.local/share/virtualenvs/selenium-test-Ou9L0FGN/lib/python3.11/site-packages/allure_commons/_allure.py&#34;, line 192, in impl
+    return func(*a, **kw)
+           ^^^^^^^^^^^^^^
+  File &#34;/home/selenium-test/pages/nav_bar_page.py&#34;, line 25, in get_user_name
+    return self.get_text(self.LOGGED_IN_USER)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &#34;/home/selenium-test/pages/base_page.py&#34;, line 33, in get_text
+    element: WebElement = self.wait.until(
+                          ^^^^^^^^^^^^^^^^
+  File &#34;/root/.local/share/virtualenvs/selenium-test-Ou9L0FGN/lib/python3.11/site-packages/selenium/webdriver/support/wait.py&#34;, line 95, in until
+    raise TimeoutException(message, screen, stacktrace)
+</h6>
+                                </td>
+                                <td></td>
+                            </tr>
+                            
+
+                            
+                            
+
+                            <!-- TABLE - AFTER STAGES -->
+                            
+                            
+                            
+                            
+                            
+                            
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+
+        </div>
+        
+            
+                
+                
+            
+
+        <div
+            class="card border-secondary mb-3 border-warning">
+            <div class="card-header">
+                User is able to login,this should fail
+                <span
+                    class="badge badge-pill badge-warning">broken</span>
+            </div>
+
+            <div class="card-body">
+                <!-- CARD TEXT -->
+                <p class="card-text">
+                    <b>description:</b> User is able to login
+                    <br>
+
+                    
+                    <b>duration:</b> 42.172 s
+                    <br>
+                    
+
+                    
+                    <b>severity:</b> normal
+                    <br>
+                    
+
+                    
+
+                    
+                    <b>tag:</b> chrome
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <b>tag:</b> @pytest.mark.usefixtures(&#39;setup&#39;)
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <b>suite:</b> test_login
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <b>package:</b> tests.test_login
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <b>Status Message: </b>
+                    selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000100967598 chromedriver + 4973976
+1   chromedriver                        0x000000010095e913 chromedriver + 4938003
+2   chromedriver                        0x000000010051bcd6 chromedriver + 470230
+3   chromedriver                        0x000000010055f2ff chromedriver + 746239
+4   chromedriver                        0x000000010055f591 chromedriver + 746897
+5   chromedriver                        0x00000001005a1384 chromedriver + 1016708
+6   chromedriver                        0x00000001005839ed chromedriver + 895469
+7   chromedriver                        0x000000010059e856 chromedriver + 1005654
+8   chromedriver                        0x0000000100583793 chromedriver + 894867
+9   chromedriver                        0x000000010055121f chromedriver + 688671
+10  chromedriver                        0x000000010055256e chromedriver + 693614
+11  chromedriver                        0x0000000100921bb7 chromedriver + 4688823
+12  chromedriver                        0x0000000100926a51 chromedriver + 4708945
+13  chromedriver                        0x000000010092d40f chromedriver + 4736015
+14  chromedriver                        0x000000010092791a chromedriver + 4712730
+15  chromedriver                        0x00000001008fa87c chromedriver + 4528252
+16  chromedriver                        0x0000000100946f28 chromedriver + 4841256
+17  chromedriver                        0x00000001009470a7 chromedriver + 4841639
+18  chromedriver                        0x000000010095828f chromedriver + 4911759
+19  libsystem_pthread.dylib             0x00007fff204068fc _pthread_start + 224
+20  libsystem_pthread.dylib             0x00007fff20402443 thread_start + 15
+                    
+                    <br>
+                    
+                    <b>Status Trace: </b>
+                    self = &lt;tests.test_login.TestLogin object at 0x10d99c750&gt;
+
+    @allure.description(&#34;User is able to login&#34;)
+    @allure.title(&#34;User is able to login,this should fail&#34;)
+    def test_user_login(self):
+&gt;       self.login_page.login_existing_user(
+            &#34;01116888790&#34;, &#34;test&#34;, &#34;alyaothman&#34;)
+
+tests/test_login.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+pages/login_page.py:56: in login_existing_user
+    assert self.get_user_name() == &#34;Hi, &#34;+username
+pages/nav_bar_page.py:25: in get_user_name
+    return self.get_text(self.LOGGED_IN_USER)
+pages/base_page.py:33: in get_text
+    element: WebElement = self.wait.until(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;selenium.webdriver.support.wait.WebDriverWait (session=&#34;35adf6d4d70f89eb1fa478b8426947e4&#34;)&gt;
+method = &lt;function visibility_of_element_located.&lt;locals&gt;._predicate at 0x10d9d1620&gt;
+message = &#39;&#39;
+
+    def until(self, method, message: str = &#34;&#34;):
+        &#34;&#34;&#34;Calls the method provided with the driver as an argument until the \
+        return value does not evaluate to ``False``.
+    
+        :param method: callable(WebDriver)
+        :param message: optional message for :exc:`TimeoutException`
+        :returns: the result of the last call to `method`
+        :raises: :exc:`selenium.common.exceptions.TimeoutException` if timeout occurs
+        &#34;&#34;&#34;
+        screen = None
+        stacktrace = None
+    
+        end_time = time.monotonic() + self._timeout
+        while True:
+            try:
+                value = method(self._driver)
+                if value:
+                    return value
+            except self._ignored_exceptions as exc:
+                screen = getattr(exc, &#34;screen&#34;, None)
+                stacktrace = getattr(exc, &#34;stacktrace&#34;, None)
+            time.sleep(self._poll)
+            if time.monotonic() &gt; end_time:
+                break
+&gt;       raise TimeoutException(message, screen, stacktrace)
+E       selenium.common.exceptions.TimeoutException: Message: 
+E       Stacktrace:
+E       0   chromedriver                        0x0000000100967598 chromedriver + 4973976
+E       1   chromedriver                        0x000000010095e913 chromedriver + 4938003
+E       2   chromedriver                        0x000000010051bcd6 chromedriver + 470230
+E       3   chromedriver                        0x000000010055f2ff chromedriver + 746239
+E       4   chromedriver                        0x000000010055f591 chromedriver + 746897
+E       5   chromedriver                        0x00000001005a1384 chromedriver + 1016708
+E       6   chromedriver                        0x00000001005839ed chromedriver + 895469
+E       7   chromedriver                        0x000000010059e856 chromedriver + 1005654
+E       8   chromedriver                        0x0000000100583793 chromedriver + 894867
+E       9   chromedriver                        0x000000010055121f chromedriver + 688671
+E       10  chromedriver                        0x000000010055256e chromedriver + 693614
+E       11  chromedriver                        0x0000000100921bb7 chromedriver + 4688823
+E       12  chromedriver                        0x0000000100926a51 chromedriver + 4708945
+E       13  chromedriver                        0x000000010092d40f chromedriver + 4736015
+E       14  chromedriver                        0x000000010092791a chromedriver + 4712730
+E       15  chromedriver                        0x00000001008fa87c chromedriver + 4528252
+E       16  chromedriver                        0x0000000100946f28 chromedriver + 4841256
+E       17  chromedriver                        0x00000001009470a7 chromedriver + 4841639
+E       18  chromedriver                        0x000000010095828f chromedriver + 4911759
+E       19  libsystem_pthread.dylib             0x00007fff204068fc _pthread_start + 224
+E       20  libsystem_pthread.dylib             0x00007fff20402443 thread_start + 15
+
+/usr/local/lib/python3.11/site-packages/selenium/webdriver/support/wait.py:95: TimeoutException
+                    
+                </p>
+
+                <!-- TABLE -->
+                
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Steps</th>
+                                <th scope="col">Duration</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- TABLE - BEFORE STAGES -->
+                            
+                            
+                            
+                            
+                            
+                            
+
+
+                            <!-- TABLE - TEST STAGES -->
+                            
+
+                            
+                            
+                                
+                                    
+                                
+                            <tr
+                                class="table-warning">
+                                <td>User logs in</td>
+                                
+                                <td>42.164 s</td>
+                                
+                            </tr>
+
+                            
+                            <tr class="table-danger">
+                                <td style="padding-left:3em">
+                                    <h6>selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000100967598 chromedriver + 4973976
+1   chromedriver                        0x000000010095e913 chromedriver + 4938003
+2   chromedriver                        0x000000010051bcd6 chromedriver + 470230
+3   chromedriver                        0x000000010055f2ff chromedriver + 746239
+4   chromedriver                        0x000000010055f591 chromedriver + 746897
+5   chromedriver                        0x00000001005a1384 chromedriver + 1016708
+6   chromedriver                        0x00000001005839ed chromedriver + 895469
+7   chromedriver                        0x000000010059e856 chromedriver + 1005654
+8   chromedriver                        0x0000000100583793 chromedriver + 894867
+9   chromedriver                        0x000000010055121f chromedriver + 688671
+10  chromedriver                        0x000000010055256e chromedriver + 693614
+11  chromedriver                        0x0000000100921bb7 chromedriver + 4688823
+12  chromedriver                        0x0000000100926a51 chromedriver + 4708945
+13  chromedriver                        0x000000010092d40f chromedriver + 4736015
+14  chromedriver                        0x000000010092791a chromedriver + 4712730
+15  chromedriver                        0x00000001008fa87c chromedriver + 4528252
+16  chromedriver                        0x0000000100946f28 chromedriver + 4841256
+17  chromedriver                        0x00000001009470a7 chromedriver + 4841639
+18  chromedriver                        0x000000010095828f chromedriver + 4911759
+19  libsystem_pthread.dylib             0x00007fff204068fc _pthread_start + 224
+20  libsystem_pthread.dylib             0x00007fff20402443 thread_start + 15
+
+</h6>
+                                </td>
+                                <td></td>
+                            </tr>
+                            
+
+                            
+                            <tr class="table-danger">
+                                <td style="padding-left:3em">
+                                    <h6>  File &#34;/usr/local/lib/python3.11/site-packages/allure_commons/_allure.py&#34;, line 192, in impl
+    return func(*a, **kw)
+           ^^^^^^^^^^^^^^
+  File &#34;/Users/alya/Documents/selenium-ci-cd/pages/login_page.py&#34;, line 56, in login_existing_user
+    assert self.get_user_name() == &#34;Hi, &#34;+username
+           ^^^^^^^^^^^^^^^^^^^^
+  File &#34;/usr/local/lib/python3.11/site-packages/allure_commons/_allure.py&#34;, line 192, in impl
+    return func(*a, **kw)
+           ^^^^^^^^^^^^^^
+  File &#34;/Users/alya/Documents/selenium-ci-cd/pages/nav_bar_page.py&#34;, line 25, in get_user_name
+    return self.get_text(self.LOGGED_IN_USER)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &#34;/Users/alya/Documents/selenium-ci-cd/pages/base_page.py&#34;, line 33, in get_text
+    element: WebElement = self.wait.until(
+                          ^^^^^^^^^^^^^^^^
+  File &#34;/usr/local/lib/python3.11/site-packages/selenium/webdriver/support/wait.py&#34;, line 95, in until
+    raise TimeoutException(message, screen, stacktrace)
+</h6>
+                                </td>
+                                <td></td>
+                            </tr>
+                            
+
+                            
+                            
+
+                            <!-- TABLE - AFTER STAGES -->
+                            
+                            
+                            
+                            
+                            
+                            
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+
+        </div>
+        
+            
+                
+                
+            
+
+        <div
+            class="card border-secondary mb-3 border-success">
+            <div class="card-header">
+                User is not allowed to enter invalid phone number
+                <span
+                    class="badge badge-pill badge-success">passed</span>
+            </div>
+
+            <div class="card-body">
+                <!-- CARD TEXT -->
+                <p class="card-text">
+                    <b>description:</b> User is not allowed to enter invalid phone number
+                    <br>
+
+                    
+                    <b>duration:</b> 2.712 s
+                    <br>
+                    
+
+                    
+                    <b>severity:</b> normal
+                    <br>
+                    
+
+                    
+
+                    
+                    <b>tag:</b> firefox
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <b>tag:</b> @pytest.mark.usefixtures(&#39;setup&#39;)
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <b>suite:</b> test_login
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <b>package:</b> tests.test_login
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <br>
+                    
+                </p>
+
+                <!-- TABLE -->
+                
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Steps</th>
+                                <th scope="col">Duration</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- TABLE - BEFORE STAGES -->
+                            
+                            
+                            
+                            
+                            
+                            
+
+
+                            <!-- TABLE - TEST STAGES -->
+                            
+
+                            
+                            
+                                
+                                    
+                                
+                            <tr
+                                class="table-success">
+                                <td>User clicks login icon in nav bar</td>
+                                
+                                <td>1.095 s</td>
+                                
+                            </tr>
+
+                            
+
+                            
+
+                            
+                                
+                                    
+                                
+                            <tr
+                                class="table-success">
+                                <td>Fill phone number</td>
+                                
+                                <td>1.054 s</td>
+                                
+                            </tr>
+
+                            
+
+                            
+
+                            
+                                
+                                    
+                                
+                            <tr
+                                class="table-success">
+                                <td>User clicks start exploring</td>
+                                
+                                <td>0.437 s</td>
+                                
+                            </tr>
+
+                            
+
+                            
+
+                            
+                            
+
+                            <!-- TABLE - AFTER STAGES -->
+                            
+                            
+                            
+                            
+                            
+                            
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+
+        </div>
+        
+            
+                
+                
+            
+
+        <div
+            class="card border-secondary mb-3 border-success">
+            <div class="card-header">
+                User is able to change country code
+                <span
+                    class="badge badge-pill badge-success">passed</span>
+            </div>
+
+            <div class="card-body">
+                <!-- CARD TEXT -->
+                <p class="card-text">
+                    <b>description:</b> User is able to change country code
+                    <br>
+
+                    
+                    <b>duration:</b> 1.948 s
+                    <br>
+                    
+
+                    
+                    <b>severity:</b> normal
+                    <br>
+                    
+
+                    
+
+                    
+                    <b>tag:</b> firefox
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <b>tag:</b> @pytest.mark.usefixtures(&#39;setup&#39;)
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <b>suite:</b> test_login
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <b>package:</b> tests.test_login
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <br>
+                    
+                </p>
+
+                <!-- TABLE -->
+                
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Steps</th>
+                                <th scope="col">Duration</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- TABLE - BEFORE STAGES -->
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+
+
+                            <!-- TABLE - TEST STAGES -->
+                            
+
+                            
+                            
+                                
+                                    
+                                
+                            <tr
+                                class="table-success">
+                                <td>User clicks login icon in nav bar</td>
+                                
+                                <td>0.471 s</td>
+                                
+                            </tr>
+
+                            
+
+                            
+
+                            
+                                
+                                    
+                                
+                            <tr
+                                class="table-success">
+                                <td>User clicks to change country code</td>
+                                
+                                <td>1.019 s</td>
+                                
+                            </tr>
+
+                            
+
+                            
+
+                            
+                                
+                                    
+                                
+                            <tr
+                                class="table-success">
+                                <td>User select country</td>
+                                
+                                <td>0.402 s</td>
+                                
+                            </tr>
+
+                            
+
+                            
+
+                            
+                                
+                                    
+                                
+                            <tr
+                                class="table-success">
+                                <td>Return country code</td>
+                                
+                                <td>0.042 s</td>
+                                
+                            </tr>
+
+                            
+
+                            
+
+                            
+                            
+
+                            <!-- TABLE - AFTER STAGES -->
+                            
+                            
+                            
+                            
+                            
+                            
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+
+        </div>
+        
+            
+                
+                
+            
+
+        <div
+            class="card border-secondary mb-3 border-success">
+            <div class="card-header">
+                User is able to change country code
+                <span
+                    class="badge badge-pill badge-success">passed</span>
+            </div>
+
+            <div class="card-body">
+                <!-- CARD TEXT -->
+                <p class="card-text">
+                    <b>description:</b> User is able to change country code
+                    <br>
+
+                    
+                    <b>duration:</b> 3.703 s
+                    <br>
+                    
+
+                    
+                    <b>severity:</b> normal
+                    <br>
+                    
+
+                    
+
+                    
+                    <b>tag:</b> firefox
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <b>tag:</b> @pytest.mark.usefixtures(&#39;setup&#39;)
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <b>suite:</b> test_login
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <b>package:</b> tests.test_login
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <br>
+                    
+                </p>
+
+                <!-- TABLE -->
+                
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Steps</th>
+                                <th scope="col">Duration</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- TABLE - BEFORE STAGES -->
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+
+
+                            <!-- TABLE - TEST STAGES -->
+                            
+
+                            
+                            
+                                
+                                    
+                                
+                            <tr
+                                class="table-success">
+                                <td>User clicks login icon in nav bar</td>
+                                
+                                <td>0.873 s</td>
+                                
+                            </tr>
+
+                            
+
+                            
+
+                            
+                                
+                                    
+                                
+                            <tr
+                                class="table-success">
+                                <td>User clicks to change country code</td>
+                                
+                                <td>1.826 s</td>
+                                
+                            </tr>
+
+                            
+
+                            
+
+                            
+                                
+                                    
+                                
+                            <tr
+                                class="table-success">
+                                <td>User select country</td>
+                                
+                                <td>0.659 s</td>
+                                
+                            </tr>
+
+                            
+
+                            
+
+                            
+                                
+                                    
+                                
+                            <tr
+                                class="table-success">
+                                <td>Return country code</td>
+                                
+                                <td>0.286 s</td>
+                                
+                            </tr>
+
+                            
+
+                            
+
+                            
+                            
+
+                            <!-- TABLE - AFTER STAGES -->
+                            
+                            
+                            
+                            
+                            
+                            
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+
+        </div>
+        
+            
+                
+                
+            
+
+        <div
+            class="card border-secondary mb-3 border-success">
+            <div class="card-header">
+                User is able to change country code
+                <span
+                    class="badge badge-pill badge-success">passed</span>
+            </div>
+
+            <div class="card-body">
+                <!-- CARD TEXT -->
+                <p class="card-text">
+                    <b>description:</b> User is able to change country code
+                    <br>
+
+                    
+                    <b>duration:</b> 2.45 s
+                    <br>
+                    
+
+                    
+                    <b>severity:</b> normal
+                    <br>
+                    
+
+                    
+
+                    
+                    <b>tag:</b> chrome
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <b>tag:</b> @pytest.mark.usefixtures(&#39;setup&#39;)
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <b>suite:</b> test_login
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <b>package:</b> tests.test_login
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <br>
+                    
+                </p>
+
+                <!-- TABLE -->
+                
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Steps</th>
+                                <th scope="col">Duration</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- TABLE - BEFORE STAGES -->
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+
+
+                            <!-- TABLE - TEST STAGES -->
+                            
+
+                            
+                            
+                                
+                                    
+                                
+                            <tr
+                                class="table-success">
+                                <td>User clicks login icon in nav bar</td>
+                                
+                                <td>0.406 s</td>
+                                
+                            </tr>
+
+                            
+
+                            
+
+                            
+                                
+                                    
+                                
+                            <tr
+                                class="table-success">
+                                <td>User clicks to change country code</td>
+                                
+                                <td>0.911 s</td>
+                                
+                            </tr>
+
+                            
+
+                            
+
+                            
+                                
+                                    
+                                
+                            <tr
+                                class="table-success">
+                                <td>User select country</td>
+                                
+                                <td>1.041 s</td>
+                                
+                            </tr>
+
+                            
+
+                            
+
+                            
+                                
+                                    
+                                
+                            <tr
+                                class="table-success">
+                                <td>Return country code</td>
+                                
+                                <td>0.068 s</td>
+                                
+                            </tr>
+
+                            
+
+                            
+
+                            
+                            
+
+                            <!-- TABLE - AFTER STAGES -->
+                            
+                            
+                            
+                            
+                            
+                            
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+
+        </div>
+        
+            
+                
+                
+            
+
+        <div
+            class="card border-secondary mb-3 border-success">
+            <div class="card-header">
+                User is not allowed to enter alpha characters
+                <span
+                    class="badge badge-pill badge-success">passed</span>
+            </div>
+
+            <div class="card-body">
+                <!-- CARD TEXT -->
+                <p class="card-text">
+                    <b>description:</b> User is not allowed to enter alpha characters
+                    <br>
+
+                    
+                    <b>duration:</b> 1.65 s
+                    <br>
+                    
+
+                    
+                    <b>severity:</b> normal
+                    <br>
+                    
+
+                    
+
+                    
+                    <b>tag:</b> firefox
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <b>tag:</b> @pytest.mark.usefixtures(&#39;setup&#39;)
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <b>suite:</b> test_login
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <b>package:</b> tests.test_login
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <br>
+                    
+                </p>
+
+                <!-- TABLE -->
+                
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Steps</th>
+                                <th scope="col">Duration</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- TABLE - BEFORE STAGES -->
+                            
+                            
+                            
+                            
+                            
+                            
+
+
+                            <!-- TABLE - TEST STAGES -->
+                            
+
+                            
+                            
+                                
+                                    
+                                
+                            <tr
+                                class="table-success">
+                                <td>User clicks login icon in nav bar</td>
+                                
+                                <td>0.677 s</td>
+                                
+                            </tr>
+
+                            
+
+                            
+
+                            
+                                
+                                    
+                                
+                            <tr
+                                class="table-success">
+                                <td>Fill phone number</td>
+                                
+                                <td>0.806 s</td>
+                                
+                            </tr>
+
+                            
+
+                            
+
+                            
+                            
+
+                            <!-- TABLE - AFTER STAGES -->
+                            
+                            
+                            
+                            
+                            
+                            
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+
+        </div>
+        
+            
+                
+                
+            
+
+        <div
+            class="card border-secondary mb-3 border-success">
+            <div class="card-header">
+                User is not allowed to enter alpha characters
+                <span
+                    class="badge badge-pill badge-success">passed</span>
+            </div>
+
+            <div class="card-body">
+                <!-- CARD TEXT -->
+                <p class="card-text">
+                    <b>description:</b> User is not allowed to enter alpha characters
+                    <br>
+
+                    
+                    <b>duration:</b> 2.104 s
+                    <br>
+                    
+
+                    
+                    <b>severity:</b> normal
+                    <br>
+                    
+
+                    
+
+                    
+                    <b>tag:</b> chrome
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <b>tag:</b> @pytest.mark.usefixtures(&#39;setup&#39;)
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <b>suite:</b> test_login
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <b>package:</b> tests.test_login
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <br>
+                    
+                </p>
+
+                <!-- TABLE -->
+                
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Steps</th>
+                                <th scope="col">Duration</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- TABLE - BEFORE STAGES -->
+                            
+                            
+                            
+                            
+                            
+                            
+
+
+                            <!-- TABLE - TEST STAGES -->
+                            
+
+                            
+                            
+                                
+                                    
+                                
+                            <tr
+                                class="table-success">
+                                <td>User clicks login icon in nav bar</td>
+                                
+                                <td>1.121 s</td>
+                                
+                            </tr>
+
+                            
+
+                            
+
+                            
+                                
+                                    
+                                
+                            <tr
+                                class="table-success">
+                                <td>Fill phone number</td>
+                                
+                                <td>0.624 s</td>
+                                
+                            </tr>
+
+                            
+
+                            
+
+                            
+                            
+
+                            <!-- TABLE - AFTER STAGES -->
+                            
+                            
+                            
+                            
+                            
+                            
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+
+        </div>
+        
+            
+                
+                
+            
+
+        <div
+            class="card border-secondary mb-3 border-success">
+            <div class="card-header">
+                User is not allowed to enter invalid phone number
+                <span
+                    class="badge badge-pill badge-success">passed</span>
+            </div>
+
+            <div class="card-body">
+                <!-- CARD TEXT -->
+                <p class="card-text">
+                    <b>description:</b> User is not allowed to enter invalid phone number
+                    <br>
+
+                    
+                    <b>duration:</b> 1.847 s
+                    <br>
+                    
+
+                    
+                    <b>severity:</b> normal
+                    <br>
+                    
+
+                    
+
+                    
+                    <b>tag:</b> chrome
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <b>tag:</b> @pytest.mark.usefixtures(&#39;setup&#39;)
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <b>suite:</b> test_login
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <b>package:</b> tests.test_login
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <br>
+                    
+                </p>
+
+                <!-- TABLE -->
+                
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Steps</th>
+                                <th scope="col">Duration</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- TABLE - BEFORE STAGES -->
+                            
+                            
+                            
+                            
+                            
+                            
+
+
+                            <!-- TABLE - TEST STAGES -->
+                            
+
+                            
+                            
+                                
+                                    
+                                
+                            <tr
+                                class="table-success">
+                                <td>User clicks login icon in nav bar</td>
+                                
+                                <td>0.433 s</td>
+                                
+                            </tr>
+
+                            
+
+                            
+
+                            
+                                
+                                    
+                                
+                            <tr
+                                class="table-success">
+                                <td>Fill phone number</td>
+                                
+                                <td>0.929 s</td>
+                                
+                            </tr>
+
+                            
+
+                            
+
+                            
+                                
+                                    
+                                
+                            <tr
+                                class="table-success">
+                                <td>User clicks start exploring</td>
+                                
+                                <td>0.359 s</td>
+                                
+                            </tr>
+
+                            
+
+                            
+
+                            
+                            
+
+                            <!-- TABLE - AFTER STAGES -->
+                            
+                            
+                            
+                            
+                            
+                            
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+
+        </div>
+        
+            
+                
+                
+            
+
+        <div
+            class="card border-secondary mb-3 border-success">
+            <div class="card-header">
+                User is able to change country code
+                <span
+                    class="badge badge-pill badge-success">passed</span>
+            </div>
+
+            <div class="card-body">
+                <!-- CARD TEXT -->
+                <p class="card-text">
+                    <b>description:</b> User is able to change country code
+                    <br>
+
+                    
+                    <b>duration:</b> 2.415 s
+                    <br>
+                    
+
+                    
+                    <b>severity:</b> normal
+                    <br>
+                    
+
+                    
+
+                    
+                    <b>tag:</b> chrome
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <b>tag:</b> @pytest.mark.usefixtures(&#39;setup&#39;)
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <b>suite:</b> test_login
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <b>package:</b> tests.test_login
+                    <br>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    <br>
+                    
+                </p>
+
+                <!-- TABLE -->
+                
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Steps</th>
+                                <th scope="col">Duration</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- TABLE - BEFORE STAGES -->
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+
+
+                            <!-- TABLE - TEST STAGES -->
+                            
+
+                            
+                            
+                                
+                                    
+                                
+                            <tr
+                                class="table-success">
+                                <td>User clicks login icon in nav bar</td>
+                                
+                                <td>0.431 s</td>
+                                
+                            </tr>
+
+                            
+
+                            
+
+                            
+                                
+                                    
+                                
+                            <tr
+                                class="table-success">
+                                <td>User clicks to change country code</td>
+                                
+                                <td>0.991 s</td>
+                                
+                            </tr>
+
+                            
+
+                            
+
+                            
+                                
+                                    
+                                
+                            <tr
+                                class="table-success">
+                                <td>User select country</td>
+                                
+                                <td>0.918 s</td>
+                                
+                            </tr>
+
+                            
+
+                            
+
+                            
+                                
+                                    
+                                
+                            <tr
+                                class="table-success">
+                                <td>Return country code</td>
+                                
+                                <td>0.053 s</td>
+                                
+                            </tr>
+
+                            
+
+                            
+
+                            
+                            
+
+                            <!-- TABLE - AFTER STAGES -->
+                            
+                            
+                            
+                            
+                            
+                            
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+
+        </div>
+        
+    </div>
+</body>
+
+</html>

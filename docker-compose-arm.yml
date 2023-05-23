@@ -1,0 +1,49 @@
+#Use this docker-compose if you are running on MAC M1, this has support for arm
+#Explaination
+# Using docker compose allows that all services to run in the same network, e.g we have a service named selenium-hub we can ping it from a service name selenium-chrome
+# We are using Selenium 4 and NOT Selenium 3, make sure when you run into issues to google for Selenium 4 and not 3 since the architecture has change
+# More info about selenium grid docker: https://github.com/SeleniumHQ/docker-selenium
+# Note that in the link the Readme shows how to run docker using run command which is exactly the same as creating docker-compose
+# You would want to use docker-compose to avoid errors+ allow for version control
+# Lastly, to run our test we have created an image using Dockerfile and we run it under service selenium-test, more info is added in the Dockerfile
+version: '3'
+services:
+  selenium-hub:
+    image: seleniarm/hub:4.9.1
+    ports:
+      - "4442-4444:4442-4444"  
+  selenium-chrome:
+    image: seleniarm/node-chromium
+    depends_on: 
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_ENABLE_TRACING=true
+      - JAVA_OPTS=-Dotel.traces.exporter=jaeger -Dotel.exporter.jaeger.endpoint=http://jaegar:14250 -Dotel.resource.attributes=service.name=selenium-node-chrome
+      - SE_NODE_MAX_INSTANCES=6
+      - SE_NODE_MAX_SESSIONS=5
+      - SE_NODE_SESSION_TIMEOUT=600
+    shm_size: '2g'
+  selenium-firefox:
+    image: seleniarm/node-firefox:4.9.1
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_MAX_INSTANCES=6
+      - SE_NODE_MAX_SESSIONS=5
+      - SE_NODE_SESSION_TIMEOUT=600 
+    shm_size: '2g'
+    depends_on: 
+      - selenium-hub
+  selenium-test:
+    image: aothmana/selenium-grid-python
+    depends_on:
+      - selenium-firefox
+      - selenium-chrome
+    environment:
+      - HUB_HOST_NAME=selenium-hub
+      - ALLURE_IP_ADDRESS=$ALLURE_IP_ADDRESS
+  
