@@ -31,7 +31,7 @@ jobs:
     - name: Run Test
       env:
         HUB_HOST_NAME: ec2-54-211-147-136.compute-1.amazonaws.com
-      run: pipenv run pytest --reruns 2 -n 8 --run_option grid 
+      run: pipenv run pytest --reruns 2 -n 10 --run_option grid 
     - name: Send results to Allure
       if: always()
       env:
