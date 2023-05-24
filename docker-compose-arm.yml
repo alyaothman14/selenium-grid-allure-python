@@ -41,7 +41,16 @@ services:
     shm_size: '2g'
     depends_on: 
       - selenium-hub
- 
+  allure:
+    image: "frankescobar/allure-docker-service"
+    environment:
+      CHECK_RESULTS_EVERY_SECONDS: NONE
+      KEEP_HISTORY: 1
+      KEEP_HISTORY_LATEST: 25
+    ports:
+      - "5050:5050"
+    volumes:
+      - ./projects:/app/projects
   selenium-test:
     image: aothmana/selenium-grid-python
     depends_on:

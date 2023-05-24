@@ -33,7 +33,8 @@ jobs:
         HUB_HOST_NAME: ec2-54-211-147-136.compute-1.amazonaws.com
       run: pipenv run pytest --reruns 2 -n 8 --run_option grid 
     - name: Send results to Allure
+      if: always()
       env:
         ALLURE_IP_ADDRESS: ec2-54-211-147-136.compute-1.amazonaws.com 
-      run: pipenv run python send_results_allure.py 
+      run: pipenv run python send_results_allure.py
     
