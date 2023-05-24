@@ -102,7 +102,8 @@ option 2
 pip install
 export HUB_HOST_NAME=<LOCAL_IP_ADDRESS> 
 export ALLURE_IP_ADDRESS=<LOCAL_IP_ADDRESS>
-pipenv run pytest --reruns 2 -n 8 --run_option grid && pipenv run python send_results_allure.py 
+pipenv run pytest --reruns 2 -n 8 --run_option grid
+pipenv run python send_results_allure.py 
 ```
 
 ## Run selenium grid and serve reports to allure REMOTELY
