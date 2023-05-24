@@ -11,9 +11,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+    - name: Restore Docker Compose image cache
+      uses: actions/cache@v2
+      with:
+        key: ${{ runner.os }}-docker-compose-${{ hashFiles('**/docker-compose.yml') }}
+        restore-keys: |
+            ${{ runner.os }}-docker-compose-
     - name: Build the Docker image
       run: docker build -t=aothmana/selenium-grid-python .
-    - name: Start Selenium Grid
-      run: docker-compose -f docker-compose-arm.yml up -d selenium-hub  selenium-chrome  selenium-firefox  
     - name: Run Test
-      run: ALLURE_IP_ADDRESS=ec2-52-90-177-178.compute-1.amazonaws.com docker-compose -f docker-compose-arm.yml up selenium-test
+      env:
+        ALLURE_IP_ADDRESS: http://ec2-54-211-147-136.compute-1.amazonaws.com/
+        HUB_HOST_NAME: http://ec2-54-211-147-136.compute-1.amazonaws.com/
+      run: docker-compose -f docker-compose-arm.yml up selenium-test

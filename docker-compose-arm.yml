@@ -48,6 +48,6 @@ services:
       - selenium-firefox
       - selenium-chrome
     environment:
-      - HUB_HOST_NAME=selenium-hub
+      - HUB_HOST_NAME=$HUB_HOST_NAME
       - ALLURE_IP_ADDRESS=$ALLURE_IP_ADDRESS
   
