@@ -94,7 +94,7 @@ docker build -t=aothmana/selenium-grid-python .
 ```
 Run testcases
 ```bash 
-ALLURE_IP_ADDRESS=<LOCAL_IP_ADDRESS> docker-compose-arm.yml up selenium-test
+ALLURE_IP_ADDRESS=<LOCAL_IP_ADDRESS> docker-compose -f docker-compose-arm.yml up selenium-test
 ```
 OR
 option 2
