@@ -18,10 +18,17 @@ jobs:
         key: ${{ runner.os }}-docker-compose-${{ hashFiles('**/docker-compose.yml') }}
         restore-keys: |
             ${{ runner.os }}-docker-compose-
+    - name: Restore Docker image cache
+      uses: actions/cache@v2
+      with:
+        path: /var/lib/docker
+        key: ${{ runner.os }}-docker-${{ hashFiles('**/Dockerfile') }}
+        restore-keys: |
+            ${{ runner.os }}-docker-            
     - name: Build the Docker image
       run: docker build -t=aothmana/selenium-grid-python .
     - name: Run Test
       env:
-        ALLURE_IP_ADDRESS: http://ec2-54-211-147-136.compute-1.amazonaws.com/
-        HUB_HOST_NAME: http://ec2-54-211-147-136.compute-1.amazonaws.com/
+        ALLURE_IP_ADDRESS: ec2-54-211-147-136.compute-1.amazonaws.com
+        HUB_HOST_NAME: ec2-54-211-147-136.compute-1.amazonaws.com
       run: docker-compose -f docker-compose-arm.yml up selenium-test
