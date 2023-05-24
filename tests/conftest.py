@@ -68,7 +68,7 @@ def setup(request: pytest.FixtureRequest,browser):
     try:      
         driver.get("https://sporty.com/news/latest")
         # make sure the page is loaded
-        wait = WebDriverWait(driver, 60)
+        wait = WebDriverWait(driver, 10)
         wait.until(expected_conditions.visibility_of_element_located(
             ((By.XPATH, "//*[contains(text(),'Customise your')]"))))
         driver.implicitly_wait(10)
