@@ -8,6 +8,7 @@ allure_results_directory = '/allure-results'
 # This url is where the Allure container is deployed. We are using localhost as example
 allure_ip_address=os.environ.get('ALLURE_IP_ADDRESS')
 allure_server="http://{0}:5050".format(allure_ip_address)
+print(allure_server)
 # Project ID according to existent projects in your Allure container - Check endpoint for project creation >> `[POST]/projects`
 project_id = 'default'
 #project_id = 'my-project-id'

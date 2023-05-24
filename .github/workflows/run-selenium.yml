@@ -1,0 +1,19 @@
+name: Run Selenium
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  run-selenium-test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker build -t=aothmana/selenium-grid-python .
+    - name: Start Selenium Grid
+      run: docker-compose -f docker-compose-arm.yml up -d selenium-hub  selenium-chrome  selenium-firefox  
+    - name: Run Test
+      run: ALLURE_IP_ADDRESS=ec2-52-90-177-178.compute-1.amazonaws.com docker-compose -f docker-compose-arm.yml up selenium-test
