@@ -100,19 +100,21 @@ OR
 option 2
 ```bash 
 pip install
-EXPORT HUB_HOST_NAME=<LOCAL_IP_ADDRESS> 
-EXPORT ALLURE_IP_ADDRESS=<LOCAL_IP_ADDRESS>
+export HUB_HOST_NAME=<LOCAL_IP_ADDRESS> 
+export ALLURE_IP_ADDRESS=<LOCAL_IP_ADDRESS>
 pipenv run pytest --reruns 2 -n 8 --run_option grid && pipenv run python send_results_allure.py 
 ```
 
 ## Run selenium grid and serve reports to allure REMOTELY
 You will need an cloud service provider e.g GCP or AWS or Digital Ocean. I have used AWS
+Note that I have terminated the EC2 Instance but attached images for showcase
 1. Setup EC2 Instance on AWS
 2. Copy the docker-compose.yml to your instance
 3. Start up allure service and selenium grid service on EC2 Instance 
 4. Run testcases 
-```bash EXPORT HUB_HOST_NAME=<REMOTE_IP_ADDRESS> 
-EXPORT ALLURE_IP_ADDRESS=<REMOTE_IP_ADDRESS>
+```bash 
+export HUB_HOST_NAME=<REMOTE_IP_ADDRESS> 
+export ALLURE_IP_ADDRESS=<REMOTE_IP_ADDRESS>
 pipenv run pytest --reruns 2 -n 8 --run_option grid && pipenv run python send_results_allure.py 
 ```
 You can see an example of this in .github/workflow/run-selenium.yml
