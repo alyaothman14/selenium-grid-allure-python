@@ -12,7 +12,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 class BasePage:
     def __init__(self, driver: Union[Chrome, Firefox]):
         self.driver = driver
-        self.wait = WebDriverWait(driver, 30)
+        self.wait = WebDriverWait(driver, 10)
 
     def click(self, locator: Tuple[By, str]) -> None:
         element: WebElement = self.wait.until(

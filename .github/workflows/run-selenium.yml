@@ -1,0 +1,40 @@
+name: Run Selenium
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  run-selenium-test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+   
+    - name: Setup Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: "3.11"
+    - name: Install pipenv
+      run: |
+            python -m pip install --upgrade pipenv wheel
+    - id: cache-pipenv
+      uses: actions/cache@v1
+      with:
+        path: ~/.local/share/virtualenvs
+        key: ${{ runner.os }}-pipenv-${{ hashFiles('**/Pipfile.lock') }}
+    - name: Install dependencies
+      if: steps.cache-pipenv.outputs.cache-hit != 'true'
+      run: |
+            pipenv install
+    - name: Run Test
+      env:
+        HUB_HOST_NAME: ec2-54-211-147-136.compute-1.amazonaws.com
+      run: pipenv run pytest --reruns 2 -n 10 --run_option grid 
+    - name: Send results to Allure
+      if: always()
+      env:
+        ALLURE_IP_ADDRESS: ec2-54-211-147-136.compute-1.amazonaws.com 
+      run: pipenv run python send_results_allure.py
+    

@@ -6,6 +6,9 @@
 # Note that in the link the Readme shows how to run docker using run command which is exactly the same as creating docker-compose
 # You would want to use docker-compose to avoid errors+ allow for version control
 # Lastly, to run our test we have created an image using Dockerfile and we run it under service selenium-test, more info is added in the Dockerfile
+# This is a docker compose file to bring allure services up which will be sending results to
+# This is not part of the docker compose for selenium because we want this service to be always be running
+# More info here: https://github.com/fescobar/allure-docker-service/tree/master
 version: '3'
 services:
   selenium-hub:
@@ -38,12 +41,22 @@ services:
     shm_size: '2g'
     depends_on: 
       - selenium-hub
+  allure:
+    image: "frankescobar/allure-docker-service"
+    environment:
+      CHECK_RESULTS_EVERY_SECONDS: NONE
+      KEEP_HISTORY: 1
+      KEEP_HISTORY_LATEST: 25
+    ports:
+      - "5050:5050"
+    volumes:
+      - ./projects:/app/projects
   selenium-test:
     image: aothmana/selenium-grid-python
     depends_on:
       - selenium-firefox
       - selenium-chrome
     environment:
-      - HUB_HOST_NAME=selenium-hub
+      - HUB_HOST_NAME=$HUB_HOST_NAME
       - ALLURE_IP_ADDRESS=$ALLURE_IP_ADDRESS
   
